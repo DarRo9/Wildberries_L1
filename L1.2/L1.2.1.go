@@ -9,7 +9,7 @@ func main() {
 	list := [5]int{2,4,6,8,10}
 	//Чтобы main не завершилась раньше цикла можно использовать sync.WaitGroup
 	var wg sync.WaitGroup
-	for el1 := range list {
+	for _, el1 := range list {
 		wg.Add(1)
 		go func(el1 int) {
 			fmt.Printf("%v*%v = %v\n", el1, el1, el1*el1)
